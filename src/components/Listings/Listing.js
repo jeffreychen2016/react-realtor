@@ -14,11 +14,15 @@ class Listings extends React.Component {
   render () {
     // const {listings} = this.props.listings;
     const {listings} = this.props;
-    const listingsItemComponents = listings.map((listingItem) => {
+    const listingsItemComponents = listings.map((listingItem, index) => {
       return (
         // move this to seperate component
         // <li key={listingItem.id}>{listingItem.price}</li>
-        <ListingItem listing={listingItem} key={listingItem.id}/>
+        <ListingItem
+          listing={listingItem}
+          index={index}
+          key={listingItem.id}
+        />
       );
     });
 
