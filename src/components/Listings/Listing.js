@@ -9,11 +9,12 @@ class Listings extends React.Component {
   // check in-coming props to see if the data type is what we expected
   static propTypes = {
     listings: PropTypes.arrayOf(listingShape),
+    onListingSelection: PropTypes.func,
   };
 
   render () {
     // const {listings} = this.props.listings;
-    const {listings} = this.props;
+    const {listings,onListingSelection} = this.props;
     const listingsItemComponents = listings.map((listingItem, index) => {
       return (
         // move this to seperate component
@@ -22,6 +23,7 @@ class Listings extends React.Component {
           listing={listingItem}
           index={index}
           key={listingItem.id}
+          onSelect={onListingSelection}
         />
       );
     });
