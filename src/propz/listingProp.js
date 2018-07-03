@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+// import { prototype } from 'stream';
 
 const listingShape = PropTypes.shape(
   {
@@ -20,4 +21,11 @@ const listingShape = PropTypes.shape(
   }
 );
 
-export {listingShape};
+const listingOptionalShape = PropTypes.oneOfType([
+  PropTypes.shape({
+    nope: PropTypes.string.isRequired,
+  }),
+  listingShape,
+]);
+
+export {listingShape,listingOptionalShape};
