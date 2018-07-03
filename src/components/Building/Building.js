@@ -4,10 +4,11 @@ import './Building.css';
 import { listingOptionalShape } from '../../propz/listingProp';
 // import listings from '../../firebaseRequests/listings';
 import { formatPrice } from '../../helper';
+import BuildingTile from '../../components/BuildingTile/BuildingTile';
 
 class Building extends React.Component {
   static propTypes = { listing: listingOptionalShape };
-  render () {
+  render() {
     const { listing } = this.props;
     if (listing.nope) {
       return (
@@ -30,6 +31,28 @@ class Building extends React.Component {
             <h5>{listing.sqareFootage} ft<sup>2</sup></h5>
             <p>{listing.description}</p>
           </div>
+        </div>
+        <div className="row">
+          <BuildingTile
+            imageSrc='cal.png'
+            altText='calendar'
+            pTagText={`Built:${listing.yearBuilt}`}
+          />
+          <BuildingTile
+            imageSrc='hill.png'
+            altText='hill'
+            pTagText={`${listing.lotInAcres} acres`}
+          />
+          <BuildingTile
+            imageSrc='flame.png'
+            altText='flame'
+            pTagText={listing.heating}
+          />
+          <BuildingTile
+            imageSrc='snow.png'
+            altText='snowflake'
+            pTagText={listing.cooling}
+          />
         </div>
       </div>
     );
