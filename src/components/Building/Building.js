@@ -8,7 +8,7 @@ import BuildingTile from '../../components/BuildingTile/BuildingTile';
 
 class Building extends React.Component {
   static propTypes = { listing: listingOptionalShape };
-  render() {
+  render () {
     const { listing } = this.props;
     if (listing.nope) {
       return (
