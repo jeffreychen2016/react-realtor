@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './ListingForm.css';
 
@@ -21,6 +22,9 @@ const defaultListing = {
 };
 
 class ListingForm extends React.Component {
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  }
   // when user fill in the form,
   // the state gets updated
   // then on submit, send the entire object to database
